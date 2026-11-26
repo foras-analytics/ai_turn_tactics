@@ -1,0 +1,18 @@
+[package]
+name = "ai-turn-tactics"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.86"
+
+[dependencies]
+rand = "0.9"
+schemars = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+axum = { version = "0.8", default-features = false, features = ["tokio", "http1", "json", "query"] }
+tokio = { version = "1", features = ["rt-multi-thread", "net", "macros"] }
+ureq = { version = "3", default-features = false, features = ["json"] }
+
+[[bin]]
+name = "dashboard"
+path = "src/bin/dashboard/main.rs"
